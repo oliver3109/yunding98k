@@ -1,4 +1,4 @@
-#  云顶 98K
+# 云顶 98K
 
 全栈项目使用 Docker compose 在本地与 Nginx, Hexo, MySQL, Node 运行在 Docker 中。供大家学习与参考。
 
@@ -28,7 +28,7 @@
   - 修改数据库账户密码，搜索：`你数据库的密码`、`你数据库的账户` 并替换为你自己的数据库账户密码
   - 执行 `i-love-auto-chess.sql` 脚本 初始化数据库和数据
 - miniapp 小程序
-  -  将 `miniapp/images` 整个文件夹上传到你自己的小程序云开发的 CDN 中，并修改 `app.ts` 中 关于云开发相关配置
+  - 将 `miniapp/images` 整个文件夹上传到你自己的小程序云开发的 CDN 中，并修改 `app.ts` 中 关于云开发相关配置
   - 修改 `miniapp/utils/http.ts` 中的接口地址 `BASE_URL`
 - reverse-proxy 反向代理
   - 将 `nginx.conf` 中的 url 配置成你自己的网站域名
