@@ -1,0 +1,12 @@
+<view class="tabbar {{ isIpx ? 'ipx' : '' }}">
+  <view class="tabbar-item" wx:for="{{ tabbarArray }}" wx:key="name">
+    <button form-type="submit" class="tabbar-item {{ currentTabIndex == item.name ? 'tabbar-item--active' : '' }}" data-index="{{ item.name }}" bindtap="onClickTap" style="color:{{currentTabIndex == item.name ? '#fff' :''}}">
+      <view class="item-v">
+        <view class="tabbar-item__icon">
+        	<view class="yunding98k {{ item.icon }}" style="border-radius: 0 50rpx 50rpx 0;border-left:0; font-size: 24px"></view>
+        </view>
+        <view class="tabbar-item__title">{{ item.title }}</view>
+      </view>
+    </button>
+  </view>
+</view>

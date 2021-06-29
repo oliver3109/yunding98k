@@ -1,0 +1,405 @@
+/* 分享给小伙伴 */
+.share {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #160d33b4;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding: 10rpx 15rpx;
+}
+
+button.share__button {
+  width: 190rpx !important;
+  height: 42rpx !important;
+  line-height: 42rpx !important;
+  outline: none !important;
+  border: 2rpx solid var(--gold);
+  background-color: var(--main-bg-color) !important;
+  color: var(--gold);
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  font-size: 24rpx !important;
+  padding: 0 !important;
+  display: inline-block !important;
+}
+
+/* ------------ 阵容 ------------ */
+.battle-array-detail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 顶部 背景图 */
+.battle-array-detail__top {
+  position: relative;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.battle-array-detail__top::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 2;
+  background: radial-gradient(ellipse closest-corner at 350rpx 200rpx, #150d3098 0%, #160d33 100%);
+  background-size: cover;
+}
+
+/* 阵容名称 */
+.battle-array-detail__top__title {
+  color: #fff;
+  font-size: 40rpx;
+  font-weight: 500;
+  z-index: 99;
+  margin-top: 70rpx;
+  margin-left: 40rpx;
+}
+
+/* 更新时间 */
+.battle-array-detail__top__updateat {
+  color: #fff;
+  font-size: 26rpx;
+  font-weight: 500;
+  z-index: 99;
+  margin-top: 15rpx;
+  margin-left: 40rpx;
+  color: #8991b6;
+}
+
+/* 队伍品质 */
+.battle-array-detail__top__info {
+  z-index: 99;
+  color: #fff;
+  margin-top: 20rpx;
+  margin-left: 36rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* 层级 */
+.battle-array-detail__top__tier {
+  z-index: 99;
+  color: #fff;
+  width: 80rpx;
+  height: 80rpx;
+  position: relative;
+}
+
+.battle-array-detail__top__tier .tier__box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.battle-array-detail__top__tier .tier__text {
+  position: absolute;
+  top: 45%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  color: #ccae70;
+  display: flex;
+}
+
+/* 组成 */
+.battle-array-detail__top__info .synergies__list {
+  margin-left: 60rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 73%;
+  max-width: 73%;
+}
+
+.battle-array-detail__top__info .synergies__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90rpx;
+  height: 80rpx;
+  position: relative;
+  margin-right: 15rpx;
+}
+
+.battle-array-detail__top__info .synergies__item .quality {
+  width: 90rpx;
+  height: 80rpx;
+  position: relative;
+}
+
+.battle-array-detail__top__info .synergies__item .logo-and-count {
+  position: absolute;
+  top: 50%;
+  left: 10rpx;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60rpx;
+}
+
+.battle-array-detail__top__info .synergies__item .logo {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.battle-array-detail__top__info .synergies__item .count {
+  font-size: 24rpx;
+}
+
+/* ------------ 组 ------------ */
+.battle-array-detail__group {
+  padding: 0 20rpx;
+}
+
+.battle-array-detail__group__item {
+  border-radius: 6rpx;
+  box-shadow: rgba(21, 11, 37, 0.5) 0rpx 2rpx 10rpx 0rpx;
+  background-color: rgba(49, 41, 85, 0.85);
+  border: 1rpx solid rgb(59, 45, 106);
+  overflow: hidden;
+  margin-top: 25rpx;
+}
+
+.battle-array-detail__group__item__title {
+  border-bottom: 1rpx solid #3b2d6a;
+  font-size: 30rpx;
+  font-weight: 500;
+  letter-spacing: 0.3rpx;
+  line-height: 1.67;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  padding: 12rpx 20rpx;
+}
+
+.battle-array-detail__group__item__content {
+  padding: 20rpx;
+  color: #8890b5;
+  letter-spacing: 0.3rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+/* 何时开始 */
+.when-to-start {
+  margin-top: 20rpx;
+}
+
+.when-to-start .title {
+  font-size: 28rpx;
+  font-weight: 500;
+  letter-spacing: 0.3rpx;
+  line-height: 1.67;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  margin-bottom: 10rpx;
+}
+
+/* 升级指南 */
+.leveling-guide {}
+
+.leveling-guide__stage {
+  margin-bottom: 20rpx;
+}
+
+.leveling-guide__stage .content {
+  margin-top: 20rpx;
+}
+
+.leveling-guide__stage__bg {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 12rpx;
+  border-bottom: 1rpx solid #3b2d6a;
+  height: 100rpx;
+}
+
+.leveling-guide .stage {
+  font-weight: 500;
+}
+
+.leveling-guide .stage .stage-title {
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.leveling-guide .stage .stage-tip {
+  font-size: 26rpx;
+  color: rgb(137, 145, 182);
+}
+
+.leveling-guide .round-list {
+  display: inline-flex;
+  position: relative;
+}
+
+.leveling-guide .round-list::before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2rpx;
+  position: absolute;
+  top: calc(50% - 1rpx);
+  background: rgb(204, 174, 112);
+}
+
+.leveling-guide .round-list .round-list__item {
+  height: 50rpx;
+  width: 50rpx;
+  margin-right: 12rpx;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.leveling-guide .round-list .round-list__item:last-of-type {
+  margin-right: 0;
+}
+
+/* 游戏计划 */
+
+.game-plan {
+  margin-top: 20rpx;
+}
+
+.game-plan:first-of-type {
+  margin-top: 0;
+}
+
+.game-plan .title {
+  font-size: 28rpx;
+  color: rgb(255, 255, 255);
+  margin-top: 13rpx;
+  margin-bottom: 13rpx;
+}
+
+.game-plan .champion {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
+.game-plan .champion image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  border: 4rpx solid var(--dark-gold);
+  margin-right: 20rpx;
+}
+
+.game-plan .content {
+  margin-bottom: 5rpx;
+}
+
+/* 装备优先级 */
+.carousel-priority-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.carousel-priority-list image {
+  width: 50rpx;
+  height: 50rpx;
+  border: 2rpx solid var(--dark-gold);
+}
+
+.carousel-priority-list__item {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-priority-list__arrow {
+  margin: 0 15rpx;
+}
+
+.carousel-priority-list__arrow::after {
+  display: block;
+  content: "";
+  width: 15rpx;
+  height: 15rpx;
+  border-width: 0px 0px 4rpx 4rpx;
+  border-color: rgb(137, 145, 182);
+  border-style: solid;
+  transform: rotate(-135deg) translate(4rpx, -4rpx);
+  box-sizing: border-box;
+}
+
+/* 团队核心和推荐装备 */
+.core-champions-list {}
+
+.core-champions-list__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 34rpx;
+}
+
+.core-champions-list__row:last-of-type {
+  margin-bottom: 0;
+}
+
+.core-champions-list__row__items {
+  flex: 1;
+  margin-left: 26rpx;
+}
+
+.core-champions-list__row__items__item {
+  margin-bottom: 16rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.core-champions-list__row__items__item:last-of-type {
+  margin-bottom: 0;
+}
+
+.core-champions-list__row__items__item image {
+  width: 50rpx;
+  height: 50rpx;
+  border: 2rpx solid var(--dark-gold);
+}
+
+
+.core-champions-list__row__items__item__fitting {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.core-champions-list__row__items__item__fitting image {
+  margin-left: 12rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border: 2rpx solid var(--dark-gold);
+}

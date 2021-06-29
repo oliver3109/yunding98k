@@ -1,0 +1,16 @@
+<view class="title {{ theme ? 'theme' : ''}} {{ padding ? 'padding' : '' }} {{ ios ? 'ios' : '' }} {{ border ? 'border-bottom' : ''}} {{ scroll ? 'scroll' : ''}}" style="{{ isSticky ? 'position: fixed;z-index: 2;background: #fff;top: ' + (sticky - 2) + 'px;' : '' }}">
+	<view class="title-view" wx:if="{{ !scroll }}">
+		<view wx:if="{{ icon != '' }}" class="iconfont title-icon {{ icon }}"></view>{{title}}
+	</view>
+	<view class="scroll-t">
+		<scroll-view scroll-with-animation scroll-x class="title-scroll" wx:if="{{ scroll }}" scroll-left="{{ scrollLeft }}">
+			<view class="title-list {{ active == index ? 'active' : '' }} {{ item.show == false ? 'padding' : '' }}" wx:for="{{ scrollList }}" wx:for-item="item" wx:for-index="index" wx:key="item" data-index="{{ index }}" catchtap="onTap">
+				<text wx:if="{{ item.show }}">{{ item.title }}</text>
+			</view>
+		</scroll-view>
+	</view>
+	<view class="more-view" wx:if="{{ more }}">
+		更多
+		<view class="iconfont iconarrow-r arrow-r"></view>
+	</view>
+</view>

@@ -1,0 +1,13 @@
+  <swiper autoplay bindchange="changeBanner" circular interval="{{ interval }}" duration="{{ duration }}">
+  	<block wx:for="{{ v }}" wx:for-item="item" wx:for-index="index" wx:key="item">
+  		<swiper-item>
+  			<view class="swiper-item {{ index == active ? 'active' : '' }} {{ radius ? 'radius' : '' }} {{ shadow ? 'shadow' : '' }}" data-item="{{ item }}" bindtap="goBanner">
+  				<u-image src="{{  item.imgUrl == '' ? 'null' : vn.length > 0 ? item[vn[1]] : item.imgUrl }}" radius click="{{ false }}" />
+  				<view class="swiper-value {{ index == active ? 'active' : '' }} {{ vn.length > 0 ? item[vn[0]] == '' ? 'none' : item.title == '' ? 'none' : '' : '' }}">
+  					<p class="p">{{ vn.length > 0 ? item[vn[0]] : item.targetTitle }}</p>
+  					<span class="span">{{ index + 1 }}/{{ v.length }}</span>
+  				</view>
+  			</view>
+  		</swiper-item>
+  	</block>
+  </swiper>

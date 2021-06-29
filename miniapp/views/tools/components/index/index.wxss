@@ -1,0 +1,21 @@
+.content {
+  text-align: center;
+  color: #ffc14f;
+  margin-top: 300rpx;
+  background-image: -webkit-linear-gradient(left,#ffc14f,#d7b678 10%,#df8d00 20%,#cc4e00 30%, #d7b678 40%, #ffc14f 50%,#d7b678 60%,#cc4e00 70%,#d7b678 80%,#ffc14f 90%, #ffc14f 100%);
+  -webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+  -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+  -webkit-background-size: 200% 100%; 
+  -webkit-animation: masked-animation 4s linear infinite;
+  font-size: 36rpx;
+}
+
+
+@keyframes masked-animation {
+  0% {
+      background-position: 0  0;
+  }
+  100% {
+      background-position: -100%  0;
+  }
+}

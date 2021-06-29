@@ -1,0 +1,13 @@
+<view class="message-view" wx:if="{{ v.isReply == 1 || v.f3 != '' }}">
+	<view class="message-ava" wx:if="{{ v.avatar != '' }}">
+		<u-image src="{{ v.avatar }}" />
+	</view>
+	<view class="message-info" style="{{ v.avatar == '' ? 'width: 100%; margin-left: 0;' : '' }}">
+		<p class="p" wx:if="{{ v.f3 != '' }}">{{ v.f1 }}</p>
+		<p class="p" wx:if="{{ v.f3 != '' }}">{{ v.f2 }}</p>
+		<p class="p" wx:if="{{ v.f3 != '' }}">{{ v.f3 }}</p>
+		<view class="message-re" style="{{ v.f3 == '' ? 'margin-bottom: 0;' : '' }}" wx:if="{{ v.re.length > 0 }}">
+			<p class="p" wx:if="{{ v.re.length > 0 }}" wx:for="{{ v.re }}" wx:for-item="item" wx:for-index="index" wx:key="item"><span class="span">回复：</span>{{ item.text }}</p>
+		</view>
+	</view>
+</view>

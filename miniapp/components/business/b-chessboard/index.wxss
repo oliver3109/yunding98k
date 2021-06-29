@@ -1,0 +1,57 @@
+.b-chessboard {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.b-chessboard__item {
+  width: 90rpx;
+  height: 90rpx;
+  position: relative;
+}
+
+.b-chessboard__item:nth-of-type(8),
+.b-chessboard__item:nth-of-type(22) {
+  margin-left: calc(90rpx / 2);
+}
+
+.b-chessboard__item__empty {
+  width: 90rpx;
+  height: 90rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.b-chessboard__item__champion {
+  width: 90rpx;
+  height: 90rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.b-chessboard__item__champion__image__box {
+  position: absolute;
+  width: 72rpx;
+  height: 80rpx;
+  background-color: var(--dark-gold);
+  clip-path: polygon(50% 0, 100% 23%, 100% 76%, 50% 100%, 0 76%, 0 23%);
+  left: 10rpx;
+  top: 6rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.b-chessboard__item__champion__image {
+  width: 68rpx;
+  height: 74rpx;
+  clip-path: polygon(50% 0, 100% 23%, 100% 76%, 50% 100%, 0 76%, 0 23%);
+  left: 0;
+  top: 0;
+}

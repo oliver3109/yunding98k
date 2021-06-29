@@ -1,0 +1,20 @@
+<picker wx:if="{{ type =='text' }}" class="picker-view" range-key="title" bindchange="bindPickerChange" value="{{ v }}" range="{{ d }}" style="width: {{ width }};height: {{ height }};">
+	<view class="picker {{ textAlign }}" style="height: {{ height }}">
+		<view class="picker-value-placeholder" wx:if="{{ v == '' }}">
+			{{ placeholder }}
+		</view>
+		<view class="picker-value" wx:else>
+			{{ d[v].title }}
+		</view>
+	</view>
+</picker>
+<picker wx:if="{{ type =='date' }}" class="picker-view" mode="date" bindchange="bindPickerChange" value="{{ v }}" style="width: {{ width }};height: {{ height }};">
+	<view class="picker {{ textAlign }}" style="height: {{ height }}">
+		<view class="picker-value-placeholder" wx:if="{{ v == '' }}">
+			{{ placeholder }}
+		</view>
+		<view class="picker-value" wx:else>
+			{{ v }}
+		</view>
+	</view>
+</picker>

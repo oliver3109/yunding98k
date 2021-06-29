@@ -1,0 +1,26 @@
+.picker{
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.picker.right{
+  justify-content: flex-end;
+}
+.picker.left{
+  justify-content: flex-start;
+}
+.picker-value{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.picker-value-placeholder{
+  color: #999;
+}

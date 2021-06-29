@@ -1,0 +1,42 @@
+<view class="content {{ ios ? 'ios' : 'android' }} {{ isIpx ? 'isIpx' : '' }} {{ theme ? 'theme' : '' }}" style="height: calc({{ screenHeight - reHeight }}px - {{ 0 }}rpx);top: {{ headHeight + reHeight }}px;{{ !theme ? 'background:' + bg : '' }}">
+  <view class="md" wx:if="{{ isLoad == 3 && !(load == false && netStatus == false && netShow) }}" catchtouchmove="true"></view>
+  <!-- 网络错误 -->
+  <view class="net-error" wx:if="{{ load == false && netStatus == false && netShow}}">
+    <view>
+      <view class="error-pic">
+        <u-toast-pic name="net-error" />
+      </view>
+      <p class="p">网络连接失败，请检查您的网络设置</p>
+      <u-button title="重新加载" theme plain radius bind:onTap="refresh" height="80" />
+    </view>
+  </view>
+  <!-- 加载中 -->
+  <view class="load-view" wx:if="{{ scroll == false && load == false }}">
+    <view class="load-border">
+      <u-loading />
+    </view>
+  </view>
+  <!-- 下拉刷新 -->
+  <movable-area wx:if="{{ scroll }}" class="movable-area {{theme ? 'theme' : ''}}" style="height: calc({{ screenHeight - reHeight }}px - {{ btn }}rpx); padding-bottom: {{ btn }}rpx">
+    <movable-view animation damping="50" out-of-bounds y="{{ y }}" disabled="{{ isLoad == 3 }}" direction="vertical" class="movable-area-view" style="height: calc({{ screenHeight - reHeight + 45 }}px - {{ btn }}rpx);" bind:change="touchMove" bind:touchend="touchEnd">
+      <view class="load-toast">
+        <view class="load-now" wx:if="{{ isLoad == 1 || isLoad == 2 }}">
+          <view class="load-arrow-icon iconfont iconrefresh {{ isLoad == 1 ? '' : 'active' }}"></view>
+          <p class="p">{{ isLoad == 1 ? "下拉刷新" : isLoad == 2 ? "松开刷新" : "加载中" }}</p>
+        </view>
+        <view class="load-now" wx:if="{{ isLoad == 3 }}">
+          <u-loading font="{{ false }}" theme="{{theme ? true : false}}" />
+        </view>
+      </view>
+      <scroll-view scroll-with-animation enhanced="{{ true }}" scroll-top="{{ toTop }}" class="scroll-to" scroll-y style="height: calc({{ screenHeight - reHeight + 45 }}px - {{ btn }}rpx);" bindscroll="onScroll" bindscrolltolower="onEnd">
+        <slot></slot>
+        <view class="load-over {{ end }}" wx:if="{{ more && !end }}">
+          <u-loading font="{{ false }}" />
+        </view>
+        <view class="load-over {{ end }}" wx:if="{{ end }}">已经到底啦</view>
+      </scroll-view>
+    </movable-view>
+  </movable-area>
+  <!-- 加载成功 -->
+  <slot wx:if="{{ load && scroll == false && netStatus }}"></slot>
+</view>

@@ -1,0 +1,4 @@
+<u-nav title="工具" theme></u-nav>
+<u-body load="{{ load }}" scroll="{{ false }}" theme reHeight="{{ reHeight }}" btn="{{ isIpx ? 168 : 104 }}">
+  <view class="content">功能开发中，尽情期待！</view>
+</u-body>

@@ -1,0 +1,157 @@
+@import "/assets/fonts/default/iconfont.wxss";
+
+.content {
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  position: fixed;
+  overflow: hidden;
+}
+
+.content.theme {
+  background: var(--main-bg-color) !important;
+}
+
+.md {
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.load-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.load-border {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  box-sizing: 0 0 20rpx rgba(0, 0, 0, 0.25);
+}
+
+.movable-area.theme {
+  background: var(--main-bg-color)
+}
+
+.movable-area {
+  width: 100%;
+}
+
+.load-toast {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+
+.load-now {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.load-arrow-icon {
+  font-size: 28rpx;
+  color: #888;
+  margin-right: 10rpx;
+  transform-origin: center center;
+  transform: rotate(0deg) translate3d(0, 2rpx, 0);
+  transition: 0.25s;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.theme .load-arrow-icon {
+  color: #fff;
+}
+
+.load-arrow-icon.active {
+  transform: rotate(180deg) translate3d(0, 0, 0);
+}
+
+.load-now .p {
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  color: #888;
+}
+
+.theme .load-now .p {
+  color: #fff;
+}
+
+.net-error {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  z-index: 1;
+}
+
+.button .btn {
+  height: 80rpx;
+}
+
+.error-pic {
+  margin-top: -200rpx;
+}
+
+.net-error .p {
+  font-size: 26rpx;
+  color: #888;
+  display: block;
+  margin: 50rpx 0;
+}
+
+.movable-area .movable-area-view {
+  width: 100%;
+  position: relative;
+}
+
+.scroll-to {
+  height: 100%;
+  position: relative;
+  padding-top: 45px;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+.load-over {
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #888;
+}
+
+.isIpx .load-over.true {
+  padding-bottom: 64rpx;
+  transform: translate3d(0, -64rpx, 0);
+}

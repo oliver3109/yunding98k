@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-loading": "/components/u-loading/index"
+  }
+}

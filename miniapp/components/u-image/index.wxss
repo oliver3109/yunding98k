@@ -1,0 +1,17 @@
+.image-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-view .img {
+  width: 100%;
+  height: 100%;
+}
+
+.radius {
+  border-radius: 10rpx;
+}

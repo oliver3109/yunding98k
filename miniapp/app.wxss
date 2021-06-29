@@ -1,0 +1,94 @@
+@import "/assets/fonts/default/iconfont.wxss";
+@import "/assets/fonts/yunding98k/iconfont.wxss";
+
+view {
+  --main-bg-color: #160d33;
+  --main-border-color: #251e47;
+  --hover-bg-color: #271c37;
+  --purple: #aaabca;
+  --dark-purple: #6b6889;
+  --deep-purple: #382f66;
+  --blue: #38c6f4;
+  --bluey-grey: #8890b5;
+  --white: #ffffff;
+  --greeny: #4cb748;
+  --greeny-blue: #3cbdc2;
+  --gold: #BD9E59;
+  --tier-platinum: #2a947b;
+  --strong-cyan: #18bd9b;
+  --tier-gold: #f9b439;
+  --darkish-pink: #e54787;
+  --twilight: #565697;
+  --dark-blue-grey: #1a133d;
+  --pumpkin-orange: #fc7c00;
+  --lavender-grey: #b3b4d0;
+  --dark-gold: #bd9e59;
+  --yellow: #FFC306;
+  --dark-violet: #252146;
+  --grayly-blue: #565895;
+  --marine: #211D41;
+  --haiti: #161236;
+  --martinique: #2E2A4F;
+  --kinky-shark: #392b68;
+  --satiric-shark: #312955;
+  --arid-shark: #3b2d6a;
+  --tired-licorice: #2c274f;
+  --restrictive-jet: #1d1546;
+  --actual-jet: #151136;
+  --sober-earth: #bd9e59;
+  font-family: 'Helvetica Neue', Helvetica, PingFangSC-Regular, 'PingFang SC',
+    'Hiragino Sans GB', Arial, 'Microsoft Yahei', Tahoma, sans-serif;
+}
+
+swiper {
+  height: 100%;
+  transform: translateY(0);
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: none;
+}
+
+.border-bottom {
+  border-bottom: 0.7px solid #efefef;
+}
+
+.ios .border-bottom {
+  border-bottom: 1px solid #efefef;
+}
+
+.border-left {
+  border-left: 0.7px solid #efefef;
+}
+
+.ios .border-left {
+  border-left: 1px solid #efefef;
+}
+
+.border-right {
+  border-right: 0.7px solid #efefef;
+}
+
+.ios .border-right {
+  border-right: 1px solid #efefef;
+}
+
+.border-top {
+  border-top: 0.7px solid #efefef;
+}
+
+.ios .border-top {
+  border-top: 1px solid #efefef;
+}
+
+.body {
+  padding-bottom: 0 !important;
+}
+
+.isIpx .body {
+  padding-bottom: 64rpx !important;
+}

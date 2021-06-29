@@ -1,0 +1,22 @@
+/* views/database/components/index/index.wxss */
+
+.list {
+  padding: 40rpx 20rpx 0;
+}
+
+.item {
+  z-index: -99;
+  background-size: cover;
+  height: 150rpx;
+  border: 2rpx solid #564c36;
+  text-align: center;
+}
+
+.title {
+  display: inline-block;
+  font-size: 30rpx;
+  color: #b88d31;
+  line-height: 150rpx;
+  font-weight: bold;
+  z-index: 99;
+}

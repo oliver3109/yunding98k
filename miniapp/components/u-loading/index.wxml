@@ -1,0 +1,7 @@
+<view class="loading-view {{theme ? 'theme' : ''}}">
+	<view class="loading-r-g">
+		<view class="loading-r"></view>
+		<view class="loading-r"></view>
+	</view>
+	<text class="text" wx:if="{{ font }}">{{title}}</text>
+</view>

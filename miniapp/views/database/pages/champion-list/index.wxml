@@ -1,0 +1,31 @@
+<u-nav title="英雄图鉴" theme></u-nav>
+<u-body load="{{ load }}" scroll theme bind:onRefresh="onRefresh">
+  <u-search placeholder="搜索英雄" theme bind:change="onSearch"></u-search>
+  <view class="search">
+    <picker value="{{ searchCache.origin }}" range-key="name" range="{{ originList }}" data-key="originId" bindchange="handleChange">
+      <view class="search-item">
+        <view>种族</view>
+        <view class="iconfont iconarrow-chose"></view>
+      </view>
+    </picker>
+    <picker value="{{ searchCache.profession }}" range-key="name" range="{{ professionList }}" data-key="professionId" bindchange="handleChange">
+      <view class="search-item">
+        <view>职业</view>
+        <view class="iconfont iconarrow-chose"></view>
+      </view>
+    </picker>
+    <picker value="{{ searchCache.cost }}" range-key="name" range="{{ costList }}" data-key="cost" bindchange="handleChange">
+      <view class="search-item">
+        <view>金钱</view>
+        <view class="iconfont iconarrow-chose"></view>
+      </view>
+    </picker>
+  </view>
+  <view class="champion-list">
+    <view wx:for="{{ championList }}" wx:key="_id" data-id="{{item.id}}" bindtap="onClickChampion" class="champion-list__item">
+      <view class="champion-list__item__avatar">
+        <b-champion-avatar url="{{ item.avatar }}" name="{{ item.nameCn }}" width="{{ 125 }}" height="{{ 125 }}" />
+      </view>
+    </view>
+  </view>
+</u-body>

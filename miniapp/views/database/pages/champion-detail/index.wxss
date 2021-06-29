@@ -1,0 +1,420 @@
+/* views/champion-detail/index.wxss */
+.champion-detail {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.champion-detail__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  font-size: 20rpx;
+  background-color: rgb(35, 30, 76);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2rpx solid rgb(59, 45, 105);
+  border-radius: 6rpx;
+  box-shadow: rgba(21, 11, 37, 0.5) 0px 4rpx 20rpx 0px;
+  overflow: hidden;
+  margin: 16rpx 20rpx 0;
+  height: 372rpx;
+}
+
+.champion-detail__info__bg::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 2;
+  background: radial-gradient(ellipse closest-corner at 367rpx 189rpx, #150d3044 0%, #160d33 166%);
+}
+
+.champion-detail__info__bg {
+  height: 300rpx;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.champion-detail__info__bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-weight: 700;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(59, 45, 105);
+  color: rgb(255, 255, 255);
+  padding: 20rpx 20rpx;
+  font-size: 30rpx;
+  z-index: 99;
+}
+
+.champion-detail__info__bottom__cost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.champion-detail__info__bottom__cost image {
+  width: 40rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+
+.champion-detail__info__quality {
+  position: absolute;
+  left: 20rpx;
+  bottom: 90rpx;
+  z-index: 99;
+}
+
+.champion-detail__info__quality__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.champion-detail__info__quality__row__logo {
+  border-radius: 50%;
+  background: rgb(59, 45, 105);
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 14rpx;
+}
+
+.champion-detail__info__quality__row__logo image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.champion-detail__info__quality__row__title {
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+/* ------------ 组 ------------ */
+.battle-array-detail__group {
+  padding: 0 20rpx;
+}
+
+.battle-array-detail__group__item {
+  border-radius: 6rpx;
+  box-shadow: rgba(21, 11, 37, 0.5) 0rpx 2rpx 10rpx 0rpx;
+  background-color: rgba(49, 41, 85, 0.85);
+  border: 1rpx solid rgb(59, 45, 106);
+  overflow: hidden;
+  margin-top: 25rpx;
+}
+
+.battle-array-detail__group__item__title {
+  border-bottom: 1rpx solid #3b2d6a;
+  font-size: 28rpx;
+  font-weight: 500;
+  letter-spacing: 0.3rpx;
+  line-height: 1.67;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  padding: 12rpx 20rpx;
+}
+
+.battle-array-detail__group__item__content {
+  padding: 20rpx;
+  color: #8890b5;
+  letter-spacing: 0.3rpx;
+  font-size: 26rpx;
+}
+
+/* 技能 */
+.champion-skill {}
+
+.champion-skill__row1 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.champion-skill__row1__right {
+  flex: 0 0 85%;
+}
+
+.champion-skill__img {
+  width: 70rpx;
+  height: 70rpx;
+  border: 1rpx solid rgb(170, 171, 202);
+  margin-right: 20rpx;
+}
+
+.champion-skill__name {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 30rpx;
+}
+
+.champion-skill__desc {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.champion-skill__row2 {
+  margin-top: 15rpx;
+}
+
+.champion-skill__attrs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15rpx;
+  font-size: 26rpx;
+}
+
+.champion-skill__attrs:last-of-type {
+  margin-bottom: 0;
+}
+
+.champion-skill__attrs .key {
+  color: rgb(170, 171, 202);
+  text-transform: capitalize;
+}
+
+.champion-skill__attrs .value {
+  font-weight: 700;
+  color: rgb(255, 255, 255)
+}
+
+/* 数据 */
+.champion-attr {
+  display: flex;
+  flex-direction: column;
+}
+
+.champion-attr__row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 20rpx;
+}
+
+.champion-attr__row:last-of-type {
+  margin-bottom: 0;
+}
+
+.champion-attr__column1 {
+  flex: 0 0 50%
+}
+
+.champion-attr__column2 {
+  flex: 0 0 25%
+}
+
+.champion-attr__column3 {
+  flex: 0 0 25%
+}
+
+.champion-attr__title {
+  color: rgb(170, 171, 202);
+  font-size: 28rpx;
+}
+
+.champion-attr__value {
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+  height: 30rpx;
+}
+
+.champion-attr__value__logo {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+}
+
+.champion-attr__value__text {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 28rpx;
+}
+
+
+/* 推荐装备 */
+.champion-recommend-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.champion-recommend-item__row {
+  flex: 1;
+}
+
+.champion-recommend-item__row {
+  margin-bottom: 16rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.champion-recommend-item__row:last-of-type {
+  margin-bottom: 0;
+}
+
+.champion-recommend-item__row image {
+  width: 50rpx;
+  height: 50rpx;
+  border: 2rpx solid var(--dark-gold);
+}
+
+.champion-recommend-item__fitting {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.champion-recommend-item__fitting image {
+  margin-left: 12rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border: 2rpx solid var(--dark-gold);
+}
+
+/* 羁绊 */
+.champion-quality {
+  position: relative;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.champion-quality:last-of-type::after {
+  content: "";
+  height: 0rpx;
+}
+
+.champion-quality::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: -15rpx;
+  right: -15rpx;
+  height: 4rpx;
+  background-color: rgb(59, 45, 106);
+}
+
+.champion-quality .row1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30rpx 0 20rpx;
+  width: 100%;
+}
+
+.champion-quality .row1 .icon {
+  flex: 8;
+  text-align: center;
+}
+
+.champion-quality .row1 .desc {
+  flex: 16;
+  text-align: left;
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 40rpx;
+}
+
+.champion-quality .row1 .icon image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.champion-quality .row1 .icon .title {
+  font-size: 26rpx;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 15rpx;
+}
+
+.champion-quality .row2 {
+  padding: 20rpx 0 20rpx;
+  width: 100%;
+}
+
+.champion-quality .row2 .extra {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20rpx;
+}
+
+.champion-quality .row2 .extra .key {
+  flex: 2;
+  font-size: 26rpx;
+  color: #fff;
+  font-weight: 500;
+}
+
+.champion-quality .row2 .extra .key .key__value {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border: 1rpx solid #c6aa4f;
+  background: #ae8b42;
+  text-align: center;
+  color: #fff5e0;
+  margin-left: 20rpx;
+}
+
+.champion-quality .row2 .extra .key .key__value.count--1,
+.champion-quality .row2 .extra .key .key__value.count--2,
+.champion-quality .row2 .extra .key .key__value.count--3 {
+  border-color: #a5644a;
+  background: #7f4f3e;
+}
+
+.champion-quality .row2 .extra .key .key__value.count--4,
+.champion-quality .row2 .extra .key .key__value.count--5 {
+  border-color: #a7a399;
+  background: #818181;
+}
+
+.champion-quality .row2 .extra .key .key__value.count--6 {
+  border-color: #c6aa4f;
+  background: #ae8b42;
+}
+
+.champion-quality .row2 .extra .key .key__value.count--7,
+.champion-quality .row2 .extra .key .key__value.count--8,
+.champion-quality .row2 .extra .key .key__value.count--9 {
+  border-color: #60dace;
+  background: #d4f6f1;
+  color: #1c1c1c;
+}
+
+.champion-quality .row2 .extra .value {
+  flex: 12;
+  font-size: 26rpx;
+  color: #fff;
+  font-weight: 400;
+  text-align: left;
+  line-height: 38rpx;
+}

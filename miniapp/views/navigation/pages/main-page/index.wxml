@@ -1,0 +1,12 @@
+<!-- 首页 -->
+<view hidden="{{ currentActiveIndex !== 'battle-array' }}">
+  <battle-array id="battyArray"></battle-array>
+</view>
+<view hidden="{{ currentActiveIndex !== 'tools' }}">
+  <tools></tools>
+</view>
+<view hidden="{{ currentActiveIndex !== 'database' }}">
+  <database></database>
+</view>
+
+<u-tabbar tabbarData="{{ tabbarData }}" active-index="{{ currentActiveIndex }}" bind:change="onClickTap"></u-tabbar>

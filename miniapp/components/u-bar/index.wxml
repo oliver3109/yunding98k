@@ -1,0 +1,5 @@
+<view class="bar">
+	<view class="bar-inner" style="width: {{ np }}%;">
+		<text class="text" wx:if="{{ border == false }}">{{ np }}%</text>
+	</view>
+</view>

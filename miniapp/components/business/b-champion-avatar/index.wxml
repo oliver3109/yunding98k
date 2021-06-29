@@ -1,0 +1,11 @@
+<view class="b-champion-avatar" style="width: {{width + 8}}rpx;" bindtap="onClick">
+  <view class="b-champion-avatar__content" style="width: {{width}}rpx; height: {{height}}rpx;">
+    <image src="cloud://{{ $staticCdnUrl }}{{ url }}" class="b-champion-avatar__image" style="width: {{width}}rpx; height: {{height}}rpx;" mode="widthFix" />
+    <view class="b-champion-avatar__items" wx:if="{{itemUrls && itemUrls.length > 0}}">
+      <view class="b-champion-avatar__items__item" wx:for="{{itemUrls}}" wx:key="index" style="width: calc({{width}}rpx / 3)">
+        <image src="cloud://{{ $staticCdnUrl }}{{ item }}" class="b-champion-avatar__items__item__image" style="width: calc({{width}}rpx / 3); height: calc({{width}}rpx / 3);" mode="widthFix" />
+      </view>
+    </view>
+  </view>
+  <view class="b-champion-avatar__name" wx:if="{{name}}">{{name}}</view>
+</view>

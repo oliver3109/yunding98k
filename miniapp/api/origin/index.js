@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+const http_1 = require("../../utils/http");
+exports.default = {
+    getOriginList: (data) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
+        return http_1.default.get({ url: '/origin/list', data });
+    }),
+    getOriginDetail: (data) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
+        return http_1.default.get({ url: '/origin/detail', data });
+    })
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSwyQ0FBb0M7QUF3QnBDLGtCQUFlO0lBRWIsYUFBYSxFQUFFLENBQU8sSUFBVSxFQUFFLEVBQUU7UUFDbEMsT0FBTyxjQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsR0FBRyxFQUFFLGNBQWMsRUFBRSxJQUFJLEVBQUUsQ0FBQyxDQUFDO0lBQ2pELENBQUMsQ0FBQTtJQUVELGVBQWUsRUFBRSxDQUFPLElBQXFCLEVBQUUsRUFBRTtRQUMvQyxPQUFPLGNBQUksQ0FBQyxHQUFHLENBQWtCLEVBQUUsR0FBRyxFQUFFLGdCQUFnQixFQUFFLElBQUksRUFBRSxDQUFDLENBQUM7SUFDcEUsQ0FBQyxDQUFBO0NBQ0YsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBodHRwIGZyb20gJy4uLy4uL3V0aWxzL2h0dHAnO1xuXG4vKipcbiAqIOenjeaXj+aWsOWini/mm7TmlrDmlbDmja7nu5PmnoRcbiAqL1xuaW50ZXJmYWNlIElTYXZlT3JpZ2luRGF0YSB7XG4gIGlkPzogc3RyaW5nO1xuICBjcmVhdGVBdD86IHN0cmluZztcbiAgdXBkYXRlQXQ/OiBzdHJpbmc7XG4gIGlzRGVsZXRlZD86IDAgfCAxO1xuICBuYW1lPzogc3RyaW5nO1xuICBuYW1lQ24/OiBzdHJpbmc7XG4gIGltZz86IHN0cmluZztcbiAgZGVzYz86IHN0cmluZztcbiAgZXh0cmFEYXRhPzogc3RyaW5nO1xufVxuXG5leHBvcnQgaW50ZXJmYWNlIElPcmlnaW5BcGkge1xuICAvKiog6I635Y+W56eN5peP6K+05piO5YiX6KGoICovXG4gIGdldE9yaWdpbkxpc3Q6IChkYXRhPzogYW55KSA9PiBQcm9taXNlPGFueT47XG4gIC8qKiDmn6Xor6Lnp43ml4/or7TmmI7or6bmg4UgKi9cbiAgZ2V0T3JpZ2luRGV0YWlsOiAoZGF0YT86IHsgaWQ6IHN0cmluZyB9KSA9PiBQcm9taXNlPElTYXZlT3JpZ2luRGF0YT47XG59XG5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgLyoqIOiOt+WPluenjeaXj+ivtOaYjuWIl+ihqCAqL1xuICBnZXRPcmlnaW5MaXN0OiBhc3luYyAoZGF0YT86IGFueSkgPT4ge1xuICAgIHJldHVybiBodHRwLmdldCh7IHVybDogJy9vcmlnaW4vbGlzdCcsIGRhdGEgfSk7XG4gIH0sXG4gIC8qKiDmn6Xor6Lnp43ml4/or7TmmI7or6bmg4UgKi9cbiAgZ2V0T3JpZ2luRGV0YWlsOiBhc3luYyAoZGF0YT86IHsgaWQ6IHN0cmluZyB9KSA9PiB7XG4gICAgcmV0dXJuIGh0dHAuZ2V0PElTYXZlT3JpZ2luRGF0YT4oeyB1cmw6ICcvb3JpZ2luL2RldGFpbCcsIGRhdGEgfSk7XG4gIH1cbn07XG4iXX0=

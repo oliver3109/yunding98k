@@ -1,0 +1,10 @@
+<view class="b-chessboard">
+  <view class="b-chessboard__item {{ item ? 'has' : '' }}" wx:for="{{list}}" wx:key="index">
+    <image src="/assets/images/chess.svg" class="b-chessboard__item__empty" />
+    <view class="b-chessboard__item__champion" wx:if="{{item}}">
+      <view class="b-chessboard__item__champion__image__box">
+        <image class="b-chessboard__item__champion__image" src="cloud://{{ $staticCdnUrl }}{{ item.avatar }}" bindtap="onClickAvatar" data-id="{{ item.id }}" />
+      </view>
+    </view>
+  </view>
+</view>

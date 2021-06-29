@@ -1,0 +1,52 @@
+/* views/database/pages/champion-list/index.wxss */
+
+/* 高级搜索 */
+
+.search {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 18rpx 0;
+}
+
+.search-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e9e9e9;
+  font-size: 28rpx;
+}
+
+.search-item .iconfont {
+  line-height: 28rpx;
+  font-size: 16rpx;
+  margin-left: 12rpx;
+}
+
+/* 英雄列表 */
+.champion-list {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: flex-start;
+  padding: 20rpx 60rpx 0;
+}
+
+.champion-list__item {
+  width: 125rpx;
+  height: 125rpx;
+  display: inline-block;
+  margin-bottom: 100rpx;
+  margin-right: 40rpx;
+}
+
+.champion-list__item__avatar {
+  width: 125rpx;
+  height: 125rpx;
+  display: inline-block;
+  position: relative;
+}
+
+
+.champion-list__item:nth-child(4n) {
+  margin-right: 0 !important;
+}

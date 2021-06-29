@@ -1,0 +1,8 @@
+<u-nav title="数据库" theme></u-nav>
+<u-body load="{{ true }}" scroll="{{ false }}" theme reHeight="{{ 0 }}" btn="{{ isIpx ? 168 : 104  }}">
+  <view class="list">
+    <view style="background-image:url(https://{{ $staticHttpsUrl }}/images/common/database/champion.png)" class="item" bindtap="onClickChampionList">
+      <view class="title">英雄图鉴</view>
+    </view>
+  </view>
+</u-body>

@@ -1,0 +1,29 @@
+@font-face {font-family: "yunding98k";
+  src: url('iconfont.eot?t=1606115974795'); /* IE9 */
+  src: url('iconfont.eot?t=1606115974795#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAP0AAsAAAAACHAAAAOlAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqDfIM6ATYCJAMQCwoABCAFhQUHXhtaB8gekiQPy2LzfLCcAgoA4uH5/Wrn/v/G3syqAE1c0ybco1hIJLPqiZDpbGhowqu1/d+5/Lm7AXCGCIW0h0lfmqG6TZIDlOCmJ/SEZOHGcj/dz7cqbqEvstQqXnM3fVpbFQ8P5AaUcWB/4Zj6JNwbAKLDMq2CfrAqoU48nS5WIBf0D2NXXsR1AtlkRdDmnqEp8JcY8wJxwaFL4J9SSDXRoS5US7YmcRt46sVN9jhwy/9+/IKF4U+hUjKWjp3qVqHtq/4r4WSYDJeLAOZ4OrBdlJgNJOJMqeEYa+iazSorgTZLgbqpKxir734jDINZexHU8V8eoVASVUZkCyxG7pKveptC8PVOoeArEbpJdJpdRw9wD8A4wo7GVVTVh1OoWVWrGiNvBKKn05zgm3E8BDrxlotJdsSrWZK1IJHKoHUpHIVgyKBgFHIEBdndlN7qHAiOLpu7pmB6N5qamkGz02qkn5kGXqyUPXkV+iJo/oGg8ox2eNAgBC46HFjRhJ277rKmFufnZucWpm9nO4kz0pp8njAtK3V7iXGd32d0zPgULH/t8P4jYaev1S4fMwNKSzu/LNYUIJfbRhc/UwcVtZMZ7peqOG+W986l82Bxt84aapcZTA8ee4fSQ/8+XOaHl4H0/nFS5h1SpHSzZMU7/wISUouYydvbvjzWC3/13hL5o478Gv3/roGr7tKfoC6Md/+x2efXmw9EpurStJ/YPP+4p0+a1wOQ2jwKjRBljCzfsn+DCcJJWpOw58V5yOn/wdNcvzASuBrW9KcuucKa98d8CdknXlztmX+JqTB/J7NlUVLZhjIlmWMztPBkLX/eTrQs4yf66PY+hqivtYOQU0wGhZopUMqmIhN2PlQ0rYSqbAtks4zubuqxwypSAzMdAQi9HqDQ7h2Uej0hE/YDKvoDQVVvxEG2KwqPbJoau+JNnEiCqFjexg6FUc36hQjcXqeqg+r1decniL7ulngmKXxlhnDTwSgunzu/wNtLKOFjrTA39AohNKxx5sE9g95G3G6GDc6cRBEldiGMhtJ5p8oeVKIwDwTahCMkAqHCZNswBwVDaa5OCFSI11Eqx2hdvTouEwgdDXeT8NqMeeIZBGd+m6GwciXKWiF7BbRl2rXdY9qgqyAIGkzDMR5Yz2p1hNt0MZhRPsmJUAgl7D0chgalqJzWVlCya5HnabdAZtycoogyUlS0LkqyLPFiwZjbjEpQ7VlCuEmxxLm0HZaXqVLglEwCAAAAAA==') format('woff2'),
+  url('iconfont.woff?t=1606115974795') format('woff'),
+  url('iconfont.ttf?t=1606115974795') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1606115974795#yunding98k') format('svg'); /* iOS 4.1- */
+}
+
+.yunding98k {
+  font-family: "yunding98k" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.yd98k-tabbar-tools:before {
+  content: "\e649";
+}
+
+.yd98k-tabbar-battle-array:before {
+  content: "\e6e7";
+}
+
+.yd98k-tabbar-database:before {
+  content: "\e6f0";
+}
+

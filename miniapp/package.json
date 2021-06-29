@@ -1,0 +1,35 @@
+{
+  "name": "yunding98k",
+  "version": "1.0.0",
+  "description": "云顶98k",
+  "scripts": {
+    "eslint": "eslint . --ext .ts  --fix",
+    "compile": "./node_modules/typescript/bin/tsc",
+    "tsc": "node ./node_modules/typescript/lib/tsc.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "md5": "^2.3.0",
+    "miniprogram-api-promise": "^1.0.4",
+    "tslib": "^2.0.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-typescript": "^0.14.0",
+    "husky": "^4.3.0",
+    "miniprogram-api-typings": "^2.8.3-1",
+    "prettier": "^2.1.2",
+    "typescript": "^4.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint && npm run tsc"
+    }
+  }
+}

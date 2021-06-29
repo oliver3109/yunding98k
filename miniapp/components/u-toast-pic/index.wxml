@@ -1,0 +1,1 @@
+<view class="g {{name}} {{ sm ? 'sm' : '' }}"></view>

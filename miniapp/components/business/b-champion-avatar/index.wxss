@@ -1,0 +1,41 @@
+.b-champion-avatar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.b-champion-avatar__content {
+  display: block;
+  position: relative;
+  border-radius: 50%;
+  border: 4rpx solid var(--dark-gold);
+}
+
+.b-champion-avatar__image {
+  border-radius: 50%;
+}
+
+.b-champion-avatar__items {
+  position: absolute;
+  bottom: -20rpx;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.b-champion-avatar__items__item__image {
+  border: 2rpx solid var(--dark-gold);
+}
+
+.b-champion-avatar__name {
+  color: var(--lavender-grey);
+  font-size: 24rpx;
+  font-weight: 500;
+  margin-top: 18rpx;
+  word-break: keep-all;
+}

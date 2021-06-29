@@ -1,0 +1,8 @@
+<!-- 启动页面 -->
+<u-nav title=""></u-nav>
+<u-body load="{{ load }}" bg="#fff">
+  <view class="content">
+    <view class="logo" />
+    <p class="info">智慧校友 技术支持</p>
+  </view>
+</u-body>

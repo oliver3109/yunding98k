@@ -1,0 +1,180 @@
+.formation {
+  position: relative;
+}
+
+
+/* ------ 快捷按钮 ------ */
+.formation .quick-function-area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap row;
+  height: 180rpx;
+}
+
+.formation .quick-function-area .item {
+  flex: 0 0 25%;
+  width: 25%;
+}
+
+.formation .quick-function-area .item .round {
+  background-color: #ffc14f;
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.formation .quick-function-area .item .title {
+  margin-top: 10rpx;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+/* ------ 阵容顶部 ------ */
+.formation .formation__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12rpx 0;
+  border-bottom: 1rpx solid var(--main-border-color);
+  margin: 0 20rpx;
+}
+
+.formation .formation__top .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.formation .formation__top .left .title {
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.formation .formation__top .left .version {
+  color: #aaaaaa;
+  font-size: 24rpx;
+  margin-left: 15rpx;
+}
+
+.formation .formation__top .more {
+  color: #fff;
+  font-size: 24rpx;
+}
+
+/* ----------------------------------- 阵容列表 ----------------------------------- */
+.formation-list {}
+
+/* ---------------------------------- 阵容列表 - 单个 ----------------------------------- */
+.formation-list .formation-list__item {
+  min-height: 200rpx;
+  padding: 30rpx 20rpx 20rpx;
+}
+
+.formation-list .formation-list__item:nth-of-type(2n) {
+  background-color: #21154a;
+}
+
+.formation-list .formation-list__item .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formation-list .formation-list__item .info .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* 阵容列表 - 单个 - 分级 */
+.formation-list .formation-list__item .info .left .tier {
+  position: relative;
+  color: #fff;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.formation-list .formation-list__item .info .left .tier .tier__box {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.formation-list .formation-list__item .info .left .tier .tier__text {
+  color: #ccae70;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+/* 阵容列表 - 单个 - 阵容标题 */
+.formation-list .formation-list__item .info .left .title {
+  color: #fff;
+  font-size: 28rpx;
+  margin-left: 12rpx;
+}
+
+/* 阵容列表 - 单个 - 查看详情 */
+.formation-list .formation-list__item .info .detail {
+  color: #cecece;
+  font-size: 26rpx;
+}
+
+/* ---------------------------------- 阵容列表 - 单个 - 后期阵容（成形） ----------------------------------- */
+.formation-list .formation-list__item .champions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.formation-list .formation-list__item .champions .champions__item {
+  flex: 0 0 20%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 150rpx;
+}
+
+/* 阵容列表 - 团队组成 */
+.formation-list .formation-list__item .synergies {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+
+.formation-list .formation-list__item .synergies .synergies__list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.formation-list .formation-list__item .synergies .synergies__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.formation-list .formation-list__item .synergies .synergies__item .logo {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.formation-list .formation-list__item .synergies .like {
+  width: 120rpx;
+  height: 36rpx;
+  font-size: 22rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid rgb(147, 147, 147);
+}

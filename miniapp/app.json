@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "views/navigation/pages/main-page/index",
+    "views/navigation/pages/start-page/index",
+    "views/battle-array/pages/battle-array-detail/index"
+  ],
+  "subPackages": [
+    {
+      "root": "views/database/pages",
+      "pages": [
+        "champion-detail/index",
+        "champion-list/index"
+      ]
+    }
+  ],
+  "usingComponents": {
+    "u-body": "/components/u-body/index",
+    "u-nav": "/components/u-nav/index",
+    "u-image": "/components/u-image/index",
+    "u-button": "/components/u-button/index",
+    "u-toast-pic": "/components/u-toast-pic/index",
+    "u-title": "/components/u-title/index",
+    "u-list": "/components/u-list/index",
+    "u-picker": "/components/u-picker/index",
+    "u-tabbar": "/components/u-tabbar/index",
+    "u-search": "/components/u-search/index",
+    "u-input": "/components/u-input/index",
+    "b-champion-avatar": "/components/business/b-champion-avatar",
+    "b-chessboard": "/components/business/b-chessboard"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

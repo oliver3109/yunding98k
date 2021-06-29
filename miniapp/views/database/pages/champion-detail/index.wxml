@@ -1,0 +1,212 @@
+<!-- 英雄详情页面 -->
+<u-nav title="英雄详情" theme></u-nav>
+<u-body load="{{ load }}" scroll theme bind:onRefresh="onRefresh" btn="{{ isIpx ? 64 : 0 }}">
+
+  <view class="champion-detail">
+
+    <!-- 英雄信息 -->
+    <view class="champion-detail__info">
+
+      <!-- 英雄背景 -->
+      <image class="champion-detail__info__bg" src="cloud://{{ $staticCdnUrl }}{{ champion.bgImg }}" mode="aspectFill">
+      </image>
+
+      <!-- 种族/职业 -->
+      <view class="champion-detail__info__quality">
+        <view class="champion-detail__info__quality__row" wx:for="{{ champion.professionList }}" wx:key="id">
+          <view class="champion-detail__info__quality__row__logo">
+            <image src="cloud://{{ $staticCdnUrl }}{{ item.img }}-gold.svg">
+            </image>
+          </view>
+          <view class="champion-detail__info__quality__row__title">
+            {{ item.nameCn }}
+          </view>
+        </view>
+        <view class="champion-detail__info__quality__row" wx:for="{{ champion.originList }}" wx:key="id">
+          <view class="champion-detail__info__quality__row__logo">
+            <image src="cloud://{{ $staticCdnUrl }}{{ item.img }}-gold.svg">
+            </image>
+          </view>
+          <view class="champion-detail__info__quality__row__title">
+            {{ item.nameCn }}
+          </view>
+        </view>
+      </view>
+
+      <!-- 底部信息 -->
+      <view class="champion-detail__info__bottom">
+        <view class="champion-detail__info__bottom__name">{{champion.titleCn}} {{champion.nameCn}}</view>
+
+        <view class="champion-detail__info__bottom__cost">
+          <image src="/assets/images/attr/cost.svg"></image>
+          <span>{{champion.cost}}</span>
+        </view>
+      </view>
+    </view>
+
+    <!-- 组 -->
+    <view class="battle-array-detail__group">
+      <!-- 技能 -->
+      <view class="battle-array-detail__group__item">
+        <view class="battle-array-detail__group__item__title">技能</view>
+        <view class="battle-array-detail__group__item__content">
+          <view class="champion-skill">
+            <view class="champion-skill__row1">
+              <image class="champion-skill__img" src="cloud://{{ $staticCdnUrl }}{{ champion.skillImg }}">
+              </image>
+              <view class="champion-skill__row1__right">
+                <view class="champion-skill__name">
+                  {{ champion.skillName }}
+                </view>
+                <view class="champion-skill__desc">
+                  {{ champion.skillDesc }}
+                </view>
+              </view>
+            </view>
+            <!-- <view class="champion-skill__row2">
+              <view class="champion-skill__attrs" wx:for="{{ champion.skillExtraList }}" wx:key="key">
+                <view class="key">{{ item.key }}</view>
+                <view class="value">{{ item.value }}</view>
+              </view>
+            </view> -->
+          </view>
+        </view>
+      </view>
+
+      <!-- 属性 -->
+      <view class="battle-array-detail__group__item">
+        <view class="battle-array-detail__group__item__title">数据</view>
+        <view class="battle-array-detail__group__item__content">
+          <view class="champion-attr">
+            <view class="champion-attr__row">
+              <view class="champion-attr__column1">
+                <view class="champion-attr__title">生命</view>
+                <view class="champion-attr__value">
+                  <image class="champion-attr__value__logo" src="/assets/images/attr/health.svg"></image>
+                  <view class="champion-attr__value__text">{{ champion.health }}</view>
+                </view>
+              </view>
+              <view class="champion-attr__column2">
+                <view class="champion-attr__title">护甲</view>
+                <view class="champion-attr__value">
+                  <image class="champion-attr__value__logo" src="/assets/images/attr/armor.svg"></image>
+                  <view class="champion-attr__value__text">{{ champion.armor }}</view>
+                </view>
+              </view>
+              <view class="champion-attr__column3">
+                <view class="champion-attr__title">魔法抗性</view>
+                <view class="champion-attr__value">
+                  <image class="champion-attr__value__logo" src="/assets/images/attr/magicalResistance.svg"></image>
+                  <view class="champion-attr__value__text">{{ champion.magicalResistance }}</view>
+                </view>
+              </view>
+            </view>
+            <view class="champion-attr__row">
+              <view class="champion-attr__column1">
+                <view class="champion-attr__title">伤害</view>
+                <view class="champion-attr__value">
+                  <image class="champion-attr__value__logo" src="/assets/images/attr/attackDamage.svg"></image>
+                  <view class="champion-attr__value__text">{{ champion.attackDamage }}</view>
+                </view>
+              </view>
+              <view class="champion-attr__column2">
+                <view class="champion-attr__title">攻速</view>
+                <view class="champion-attr__value">
+                  <image class="champion-attr__value__logo" src="/assets/images/attr/attackSpeed.svg"></image>
+                  <view class="champion-attr__value__text">{{ champion.attackSpeed }}</view>
+                </view>
+              </view>
+              <view class="champion-attr__column3">
+                <view class="champion-attr__title">攻击范围</view>
+                <view class="champion-attr__value">
+                  <view class="champion-attr__value__text">
+                    {{ champion.attackRange }}
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="champion-attr__row">
+              <view class="champion-attr__column1">
+                <view class="champion-attr__title">DPS (每秒伤害)</view>
+                <view class="champion-attr__value">
+                  <image class="champion-attr__value__logo" src="/assets/images/attr/dps.svg"></image>
+                  <view class="champion-attr__value__text">{{ champion.dps }}</view>
+                </view>
+              </view>
+              <view class="champion-attr__column2" style="flex: 0 0 50%">
+                <view class="champion-attr__title">法力值</view>
+                <view class="champion-attr__value">
+                  <image class="champion-attr__value__logo" src="/assets/images/attr/mana.svg"></image>
+                  <view class="champion-attr__value__text">{{ champion.consume }}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 推荐装备 -->
+      <view class="battle-array-detail__group__item">
+        <view class="battle-array-detail__group__item__title">推荐装备</view>
+        <view class="battle-array-detail__group__item__content">
+          <view class="champion-recommend-item">
+            <view class="champion-recommend-item__row" wx:for="{{ champion.recommendItemList }}"
+              wx:for-index="itemIndex" wx:key="itemIndex" wx:for-item="item">
+              <image src="cloud://{{ $staticCdnUrl }}{{item.img}}">
+              </image>
+              <view style="margin-left: 16rpx">{{ item.nameCn }}</view>
+              <view class="champion-recommend-item__fitting">
+                <image wx:for="{{item.itemFittingList}}" wx:for-item="itemFitting" wx:key="id"
+                  src="cloud://{{ $staticCdnUrl }}{{itemFitting.img}}">
+                </image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 资质介绍(职业/种族) -->
+      <view class="battle-array-detail__group__item">
+        <view class="battle-array-detail__group__item__title">羁绊</view>
+        <view class="battle-array-detail__group__item__content">
+          <view class="champion-quality" wx:for="{{ champion.originList }}" wx:key="id">
+            <view class="row1">
+              <view class="icon">
+                <image src="cloud://{{ $staticCdnUrl }}{{ item.img }}-gold.svg">
+                </image>
+                <view class="title">{{ item.nameCn }}</view>
+              </view>
+              <view class="desc">{{ item.desc }}</view>
+            </view>
+            <view class="row2">
+              <view class="extra" wx:for="{{ item.extraData }}" wx:for-item="extra" wx:for-index="key" wx:key="key">
+                <view class="key">
+                  <view class="key__value count--{{key}}">{{ key }}</view>
+                </view>
+                <view class="value">{{ extra }}</view>
+              </view>
+            </view>
+          </view>
+          <view class="champion-quality" wx:for="{{ champion.professionList }}" wx:key="id">
+            <view class="row1">
+              <view class="icon">
+                <image src="cloud://{{ $staticCdnUrl }}{{ item.img }}-gold.svg">
+                </image>
+                <view class="title">{{ item.nameCn }}</view>
+              </view>
+              <view class="desc">{{ item.desc }}</view>
+            </view>
+            <view class="row2">
+              <view class="extra" wx:for="{{ item.extraData }}" wx:for-item="extra" wx:for-index="key" wx:key="key">
+                <view class="key">
+                  <view class="key__value count--{{key}}">{{ key }}</view>
+                </view>
+                <view class="value">{{ extra }}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</u-body>

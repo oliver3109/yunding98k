@@ -1,0 +1,10 @@
+<view class="search-g {{ theme ? 'theme' : '' }} {{ screen ? 'screen' : '' }}">
+	<view class="search">
+		<view class="search-icon iconfont iconsearch"></view>
+		<u-input placeholder="{{ placeholder }}" fontSize="{{ 26 }}" width="{{ screen ? 'calc(710rpx - 320rpx)' : 'calc(710rpx - 120rpx)' }}" bind:change="change" />
+	</view>
+	<view class="search-btn" wx:if="{{ screen }}" bindtap="sx">
+		<span class="screen-btn iconfont iconscreen"></span>
+		筛选
+	</view>
+</view>

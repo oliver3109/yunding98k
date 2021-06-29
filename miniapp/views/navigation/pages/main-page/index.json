@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "battle-array": "/views/battle-array/components/index",
+    "tools": "/views/tools/components/index",
+    "database": "/views/database/components/index"
+  }
+}

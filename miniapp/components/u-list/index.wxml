@@ -1,0 +1,10 @@
+<view class="list {{ column ? 'column' : '' }}" bindtap="body">
+	<view class="list-pic {{ big ? 'big' : '' }}" wx:if="{{ v.src != '' }}">
+		<u-image src="{{ v.src }}" click="{{ click }}" />
+	</view>
+	<view class="list-view {{ v.src == '' ? 'list-view-none' : '' }}  {{ big ? 'big' : '' }}">
+		<view class="list-view-title">{{ v.title }}</view>
+		<view class="list-view-p" wx:if="{{ v.p != '' }}" style="margin-top:{{ sm ? '20rpx' : '0rpx'}}">{{ v.p }}</view>
+		<slot></slot>
+	</view>
+</view>

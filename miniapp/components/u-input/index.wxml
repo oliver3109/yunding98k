@@ -1,0 +1,1 @@
+<input password="{{ password ? true : false }}" class="{{ disable ? 'dis;' : '' }} input {{ textAlign }}" type="{{ type }}" placeholder="{{ placeholder }}" bindinput="bindValue" disabled="{{ disable }}" style="font-size: {{ fontSize }}rpx;width: {{ width }}" placeholder-style="color: #999" value="{{ value }}" />

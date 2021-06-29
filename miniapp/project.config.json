@@ -1,0 +1,94 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.14.3",
+  "projectname": "%E4%BA%91%E9%A1%B698k",
+  "scripts": {
+    "beforeCompile": "npm run tsc",
+    "beforePreview": "npm run tsc",
+    "beforeUpload": "npm run tsc"
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": false,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": true,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "appid": "wx3eb52fd1f9c8055f",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "cloudfunctionRoot": "functions/",
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "英雄详情",
+          "pathName": "views/database/pages/champion-detail/index",
+          "query": "id=e133b143-aa76-44a5-8e4b-6ecd248a9605",
+          "scene": null
+        },
+        {
+          "name": "英雄图鉴",
+          "pathName": "views/database/pages/champion-list/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "阵容详情",
+          "pathName": "views/battle-array/pages/battle-array-detail/index",
+          "query": "id=2a4b404d-3e42-485d-ba91-dfd17ae5a486",
+          "scene": null
+        },
+        {
+          "name": "首页",
+          "pathName": "views/navigation/pages/main-page/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

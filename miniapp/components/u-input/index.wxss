@@ -1,0 +1,9 @@
+.input {
+  color: #ffffff;
+  height: 100%;
+  font-size: 28rpx;
+}
+
+.input.right {
+  text-align: right;
+}

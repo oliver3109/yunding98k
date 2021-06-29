@@ -1,0 +1,12 @@
+<view class="button {{ theme ? 'theme' : '' }} {{ plain ? 'plain' : ''}} {{ radius ? 'radius' : ''}} {{ className ? className : '' }}" style="{{ width != 0 ? 'width: ' + width +';' : '' }}">
+	<button style="{{ fontSize ? 'font-size: '+ fontSize +'rpx' : ''}}" class="btn {{ className ? className : '' }}" hover-class="hover-active" wx:if="{{ auth == false}}" catchtap="onTap">
+		<u-loading wx:if="{{ loading }}" font="{{ false }}" theme="{{ className == '' ? true : false }}" style="margin-right: 20rpx" />
+		<view wx:if="{{ icon != '' && !loading }}" class="icon iconfont {{ icon }}"></view>
+		<text>{{title}}</text>
+	</button>
+	<button style="{{ fontSize ? 'font-size: '+ fontSize +'rpx' : ''}}" open-type="getUserInfo" bind:getuserinfo="getUserInfo" class="btn {{ className ? className : '' }}" hover-class="hover-active" wx:else>
+		<u-loading wx:if="{{ loading }}" font="{{ false }}" theme="{{ className == '' ? true : false }}" style="margin-right: 20rpx" />
+		<view wx:if="{{ icon != '' && !loading }}" class="icon iconfont {{ icon }}"></view>
+		<text>{{title}}</text>
+	</button>
+</view>

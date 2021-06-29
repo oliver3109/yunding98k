@@ -1,0 +1,62 @@
+<wxs module="util">
+  module.exports = {
+    str2lowerCase: function (str) {
+      return str.toLowerCase(str)
+    }
+  }
+</wxs>
+<u-nav title="云顶98K" theme></u-nav>
+<u-body load="{{ load }}" scroll theme bind:onRefresh="onRefresh" reHeight="{{ reHeight }}"
+  btn="{{ isIpx ? 168 : 104 }}">
+  <view class="formation">
+    <!-- 快捷功能 -->
+    <view class="quick-function-area" wx:if="{{ false }}">
+      <view class="item">
+        <view class="round"></view>
+        <view class="title">英雄图鉴</view>
+      </view>
+    </view>
+    <!-- 阵容列表顶部头 -->
+    <view class="formation__top" bindtap="onClickMore">
+      <vlew class="left">
+        <view class="title">推荐阵容</view>
+        <view class="version">版本：11.5</view>
+      </vlew>
+      <!-- <view class="more">查看更多阵容 ></view> -->
+    </view>
+    <!-- 阵容列表 -->
+    <view class="formation-list">
+      <!-- 单个 -->
+      <view class="formation-list__item" wx:for="{{formationList}}" wx:for-item="item" wx:key="id"
+        data-id="{{ item.id }}" bindtap="onClickDetail">
+        <view class="info">
+          <view class="left">
+            <view class="tier">
+              <image class="tier__box" src="/assets/images/tier.svg" />
+              <span class="tier__text">{{ item.tier || 'S'}}</span>
+            </view>
+            <view class="title">{{ item.nameCn }}</view>
+          </view>
+          <view class="detail">查看详情 ></view>
+        </view>
+        <!-- 后期阵容(成型) -->
+        <view class="champions">
+          <view class="champions__item" wx:for="{{item.formation}}" wx:for-item="champion" wx:key="id"
+            wx:if="{{ champion !== null }}">
+            <b-champion-avatar url="{{ champion.avatar }}" name="{{ champion.nameCn }}"
+              itemUrls="{{ champion.recommendItemImgUrls }}" width="{{ 72 }}" height="{{ 72 }}" />
+          </view>
+        </view>
+        <!-- 队伍组成 -->
+        <!-- <view class="synergies">
+          <view class="synergies__list">
+            <view class="synergies__item" wx:for="{{ item.synergies }}" wx:for-index="syIndex" wx:key="syIndex" wx:for-item="sy">
+              <image class="logo" src="cloud://{{ $staticCdnUrl }}/images/icon/set4-5/{{ sy.type }}/{{ util.str2lowerCase(sy.name) }}-gold.svg" />
+            </view>
+          </view>
+          <view class="like">给力（{{item.likeCount || 0}}）</view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</u-body>

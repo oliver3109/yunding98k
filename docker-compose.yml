@@ -1,0 +1,61 @@
+version: "3"
+
+services:
+  # 代理内部请求
+  reverse-proxy:
+    image: nginx:1.17.10
+    container_name: reverse-proxy
+    depends_on:
+      - blog
+      - api-service
+    volumes:
+      - ./reverse-proxy/nginx.conf:/etc/nginx/nginx.conf
+      - ./reverse-proxy/1_manito.fun_bundle.crt:/etc/nginx/1_manito.fun_bundle.crt
+      - ./reverse-proxy/2_manito.fun.key:/etc/nginx/2_manito.fun.key
+    ports:
+      - 80:80
+      - 443:443
+
+  # 网站
+  blog:
+    image: blog
+    container_name: blog
+    build:
+      context: ./web-blog
+    depends_on:
+      - api-service
+    ports:
+      - 8080:80
+    restart: on-failure
+
+  # 后端接口
+  api-service:
+    image: api-service
+    container_name: api-service
+    build:
+      context: ./api-service
+    links:
+      - db:mysql
+    depends_on:
+      - db
+    ports:
+      - 38080:38080
+    restart: on-failure
+
+  # MYSQL数据库
+  db:
+    image: mysql:5.7
+    container_name: mysql # 容器名 与 api-service 的 ormconfig.json 中的 host 一致
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci #设置utf8字符集
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 你数据库的密码 #root管理员用户密码
+      MYSQL_TCP_PORT: 你数据库的账户
+      MYSQL_DATABASE: i-love-auto-chess
+    ports:
+      - "3306:3306" #host物理直接映射端口为3306
+    volumes:
+      #mysql数据库挂载到host物理机目录 /opt/docker/mysql/data/db
+      - "/opt/docker/mysql/data/db:/var/lib/mysql"
+      #容器的配置目录挂载到host物理机目录 /opt/docker/mysql/conf
+      - "/opt/docker/mysql/data/conf:/etc/mysql/conf.d"

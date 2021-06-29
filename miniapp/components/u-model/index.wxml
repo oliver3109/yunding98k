@@ -1,0 +1,13 @@
+<!--components/u-model/index.wxml-->
+<view class="model-g" wx:if="{{ show }}">
+	<view class="model-view {{ esc ? 'esc' : '' }}">
+    <view class="model-title">提示</view>
+		<view class="model-body">
+      {{ font }}
+    </view>
+		<view class="model-btn-g">
+			<view class="model-btn" bindtap="esc" wx:if="{{ esc }}">取消</view>
+			<view class="model-btn" bindtap="ok">确定</view>
+		</view>
+	</view>
+</view>

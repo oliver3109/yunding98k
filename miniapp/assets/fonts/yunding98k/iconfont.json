@@ -1,0 +1,30 @@
+{
+  "id": "2222188",
+  "name": "云顶98k",
+  "font_family": "yunding98k",
+  "css_prefix_text": "yd98k-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2678601",
+      "name": "工具箱",
+      "font_class": "tabbar-tools",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "13592662",
+      "name": "drds 分布式关系型数据库服务",
+      "font_class": "tabbar-battle-array",
+      "unicode": "e6e7",
+      "unicode_decimal": 59111
+    },
+    {
+      "icon_id": "13592704",
+      "name": "mongodb 云数据库 MongoDB",
+      "font_class": "tabbar-database",
+      "unicode": "e6f0",
+      "unicode_decimal": 59120
+    }
+  ]
+}

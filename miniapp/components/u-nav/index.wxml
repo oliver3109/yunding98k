@@ -1,0 +1,25 @@
+<view class="head-group {{ isIos ? 'ios' : 'android' }} {{ theme || change != 0  ? 'theme' : ''}}" style="height: {{ headHeight }}px;padding-top: {{ statusBarHeight - 2 }}px;">
+	<view class="head-view">
+		<view class="icon-view">
+			<view class="icon-back" wx:if="{{ back }}" style="margin-left: 10px; width: {{ menuButtonObject.height * 3 }}px; height: 100%;">
+				<view class="iconfont-view" style="height: {{ headHeight }}px" catchtap="goBack">
+					<view class="iconfont iconarrow-r l" style="height: {{ menuButtonObject.height }}px;border-radius: 0 50rpx 50rpx 0;border-left:0;"></view>
+				</view>
+				<view class="iconfont-view" style="height: {{ headHeight }}px" catchtap="goHome">
+					<view class="iconfont iconhome" style="height: {{ menuButtonObject.height }}px;border-radius: 0 50rpx 50rpx 0;border-left:0;"></view>
+				</view>
+			</view>
+			<view class="icon-back" wx:if="{{ !back }}" style="margin-left: 10px; width: {{ menuButtonObject.height }}px;height: {{ headHeight }}px;">
+				<view class="iconfont-view" catchtap="goHome">
+					<view class="iconfont iconhome" style="height: {{ menuButtonObject.height }}px;border-radius: 50rpx; "></view>
+				</view>
+			</view>
+		</view>
+		<view class="head-title" wx:if="{{ change == 0 }}">
+			<view class="head-title-inner">{{title}}</view>
+		</view>
+		<view class="head-title an" wx:if="{{ change != 0 }}" style="top: {{ headHeight }}px;transform:translate3d(0,{{ change >= -(headHeight) ? change : - (headHeight) }}px,0)">
+			<view class="head-title-inner">{{changeTitle}}</view>
+		</view>
+	</view>
+</view>

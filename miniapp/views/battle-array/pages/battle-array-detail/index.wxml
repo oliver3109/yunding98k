@@ -1,0 +1,164 @@
+<wxs module="util">
+  module.exports = {
+    str2lowerCase: function (str) {
+      return str.toLowerCase(str)
+    }
+  }
+</wxs>
+<u-nav title="阵容详情" theme></u-nav>
+<!-- 分享给小伙伴 -->
+<view class="share" style="top: {{headHeight}}px">
+  <button class="share__button" open-type="share">
+    <span style="height: 42rpx;line-height: 42rpx;">分享给小伙伴</span>
+  </button>
+</view>
+<u-body load="{{ load }}" scroll theme bind:onRefresh="onRefresh" reHeight="{{ reHeight }}" btn="{{ isIpx ? 0 : 0 }}">
+  <view class="battle-array-detail">
+    <!-- 顶部背景图和简单信息 -->
+    <view class="battle-array-detail__top"
+      style="background-image:url(https://{{ $staticHttpsUrl }}{{ detail.coreChampions[0].bgImg }})">
+      <view class="battle-array-detail__top__title">{{ detail.nameCn}}</view>
+      <!-- 更新时间 -->
+      <view class="battle-array-detail__top__updateat">
+        <span>更新于</span>
+        <span style="color: #fff; margin: 0 8rpx">{{ detail.updateAt }}</span>
+        <span>最近更新的</span>
+        <span style="color: #fff; margin: 0 8rpx">11.5</span>
+        <span>补丁</span>
+      </view>
+      <view class="battle-array-detail__top__info">
+        <!-- 层级 -->
+        <view class="battle-array-detail__top__tier">
+          <image class="tier__box" src="/assets/images/tier.svg" />
+          <span class="tier__text">{{ detail.tier || 'S'}}</span>
+        </view>
+        <!-- 队伍组成 -->
+        <view class="synergies__list">
+          <view class="synergies__item" wx:for="{{ detail.synergies }}" wx:for-index="syIndex" wx:key="syIndex"
+            wx:for-item="sy">
+            <image class="quality"
+              src="/assets/images/quality/quality-{{util.str2lowerCase(sy.tier)}}{{sy.isChose ? '-chose' : ''}}.svg" />
+            <view class="logo-and-count">
+              <image class="logo"
+                src="cloud://{{ $staticCdnUrl }}/images/icon/set4-5/{{ sy.type }}/{{ util.str2lowerCase(sy.name) }}-white.svg" />
+              <span class="count">{{sy.count}}</span>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 组 -->
+    <view class="battle-array-detail__group">
+      <!-- 阵容介绍 -->
+      <view class="battle-array-detail__group__item">
+        <view class="battle-array-detail__group__item__title">阵容介绍</view>
+        <view class="battle-array-detail__group__item__content">
+          <p>{{ detail.basicInfo }}</p>
+          <view class="when-to-start">
+            <view class="title">何时开始</view>
+            <p>{{ detail.whenToMake }}</p>
+          </view>
+        </view>
+      </view>
+      <!-- 升级指南 -->
+      <view class="battle-array-detail__group__item">
+        <view class="battle-array-detail__group__item__title">升级指南</view>
+        <view class="battle-array-detail__group__item__content">
+          <view class="leveling-guide">
+            <view class="leveling-guide__stage" wx:for="{{ leveingGuides }}" wx:key="index">
+              <view class="leveling-guide__stage__bg"
+                style="background:url(https://{{ $staticHttpsUrl }}/images/common/formation/round-bg{{index + 1}}.webp) left center / auto 100% no-repeat rgb(38, 31, 71)">
+                <view class="stage">
+                  <view class="stage-title">{{item.title}}</view>
+                  <view class="stage-tip">{{item.tip}}</view>
+                </view>
+                <view class="round-list">
+                  <view class="round-list__item" wx:for="{{item.round}}" wx:for-item="round" wx:for-index="rIndex"
+                    wx:key="rIndex"
+                    style="background: url(https://{{ $staticHttpsUrl }}/images/common/formation/{{round}}.webp) center center / cover no-repeat rgb(46, 37, 83, 0);">
+                  </view>
+                </view>
+              </view>
+              <view class="content">{{ detail.levelingGuide[index] }}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 运营计划 -->
+      <view class="battle-array-detail__group__item">
+        <view class="battle-array-detail__group__item__title">运营计划</view>
+        <view class="battle-array-detail__group__item__content">
+          <view class="game-plan">
+            <view class="title">前期</view>
+            <view class="champion">
+              <image wx:for="{{ detail.gamePlan[0].championList }}" wx:key="id"
+                src="cloud://{{ $staticCdnUrl }}{{ item.avatar }}" bindtap="onClickAvatar" data-id="{{ item.id }}">
+              </image>
+            </view>
+            <view class="content">{{ detail.gamePlan[0].plain }}</view>
+          </view>
+          <view class="game-plan">
+            <view class="title">中期</view>
+            <view class="champion">
+              <image wx:for="{{ detail.gamePlan[1].championList }}" wx:key="id"
+                src="cloud://{{ $staticCdnUrl }}{{ item.avatar }}" bindtap="onClickAvatar" data-id="{{ item.id }}">
+              </image>
+            </view>
+            <view class="content">{{ detail.gamePlan[1].plain }}</view>
+          </view>
+        </view>
+      </view>
+      <!-- 其他提示 -->
+      <view class="battle-array-detail__group__item">
+        <view class="battle-array-detail__group__item__title">附加提示</view>
+        <view class="battle-array-detail__group__item__content">
+          <p wx:for="{{detail.compTips}}" wx:key="index">{{item}}</p>
+        </view>
+      </view>
+      <!-- 阵型 -->
+      <view class="battle-array-detail__group__item">
+        <view class="battle-array-detail__group__item__title">编队</view>
+        <view class="battle-array-detail__group__item__content">
+          <b-chessboard list="{{ detail.formation }}" />
+        </view>
+      </view>
+      <!-- 装备优先级 -->
+      <view class="battle-array-detail__group__item">
+        <view class="battle-array-detail__group__item__title">装备优先级</view>
+        <view class="battle-array-detail__group__item__content">
+          <view class="carousel-priority-list">
+            <view class="carousel-priority-list__item" wx:for="{{detail.carouselPriority}}" wx:key="id">
+              <image src="cloud://{{ $staticCdnUrl }}{{item.img}}"></image>
+              <view class="carousel-priority-list__arrow" wx:if="{{ index < detail.carouselPriority.length - 1 }}">
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 团队核心和装备 -->
+      <view class="battle-array-detail__group__item">
+        <view class="battle-array-detail__group__item__title">团队核心和装备</view>
+        <view class="battle-array-detail__group__item__content">
+          <view class="core-champions-list">
+            <view class="core-champions-list__row" wx:for="{{detail.coreChampions}}" wx:for-item="champion" wx:key="id">
+              <b-champion-avatar uuid="{{ champion.id }}" url="{{ champion.avatar }}" name="{{ champion.nameCn }}"
+                width="{{ 72 }}" height="{{ 72 }}" />
+              <view class="core-champions-list__row__items">
+                <view class="core-champions-list__row__items__item" wx:for="{{ champion.recommendItems }}"
+                  wx:for-index="itemIndex" wx:key="itemIndex" wx:for-item="item">
+                  <image src="cloud://{{ $staticCdnUrl }}{{item.img}}"></image>
+                  <view style="margin-left: 16rpx">{{ item.nameCn }}</view>
+                  <view class="core-champions-list__row__items__item__fitting">
+                    <image wx:for="{{item.itemFittingList}}" wx:for-item="itemFitting" wx:key="id"
+                      src="cloud://{{ $staticCdnUrl }}{{itemFitting.img}}"></image>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style="height: 40rpx"></view>
+</u-body>
